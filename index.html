@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>White Noise</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>White Noise</h1>
+      <p class="tagline">Calm focus · steady sound</p>
+    </header>
+
+    <main class="panel">
+      <div class="transport">
+        <button type="button" id="playPause" class="btn-play" aria-pressed="false" aria-label="Play">
+          <span class="icon-play" aria-hidden="true"></span>
+          <span class="btn-label">Play</span>
+        </button>
+      </div>
+
+      <div class="control">
+        <label class="control-label" for="frequency">
+          <span>Tone</span>
+          <span class="value" id="frequencyValue">740 Hz</span>
+        </label>
+        <input
+          type="range"
+          id="frequency"
+          min="200"
+          max="20000"
+          step="10"
+          value="740"
+        />
+        <p class="hint">Lower = softer / darker; higher = brighter full-spectrum noise.</p>
+      </div>
+
+      <div class="control">
+        <label class="control-label" for="volume">
+          <span>Volume</span>
+          <span class="value" id="volumeValue">20%</span>
+        </label>
+        <input type="range" id="volume" min="0" max="100" value="20" />
+      </div>
+
+      <div class="control timer-block">
+        <label class="control-label" for="timerMinutes">
+          <span>Timer</span>
+          <span class="value" id="timerDisplay">Off</span>
+        </label>
+        <div class="timer-row">
+          <input
+            type="number"
+            id="timerMinutes"
+            min="0"
+            max="999"
+            step="1"
+            value="0"
+            placeholder="Minutes"
+          />
+          <span class="timer-unit">min</span>
+        </div>
+        <p class="hint">Set minutes before playing; 0 = play until you pause. Remaining time shows while playing.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Use headphones at moderate volume. First click starts audio.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
